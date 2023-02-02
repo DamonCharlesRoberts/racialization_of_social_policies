@@ -5,3 +5,5 @@
 *.html linguist-detectable=false
 *.csv linguist-detectable=false
 *.xlsx linguist-detectable=false
+*.R linguist-detectable
+*.py linguist-detectable
