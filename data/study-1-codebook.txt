@@ -1,0 +1,54 @@
+# Title: Codebook ----
+
+# Notes: ----
+#* Description: Codebook documenting 2020 and 2019 ANES Coding schemes (based on recoding from cleaning process) for variables used in paper.
+#* Updated: 2021-10-06
+#* Updated By: dcr
+
+# Variables: ----
+[2019 & 2020] hlthcare1: 1 = Oppose a great deal - 7 = Favor a great deal
+2019 - Do you favor, oppose, or neither favor nor oppose a health care system in which a single payer, most likely the national government, is responsible for paying for the health care of all Americans?
+
+2020 - Do you favor, oppose, or neither favor nor oppose a health care system in which a single payer, most likely the national government, is responsible for paying for the health care of all Americans?
+
+[2019 & 2020] free college: 1 = Oppose a great deal - 7 = Favor a great deal
+2019 - Do you favor, oppose, or neither favor nor oppose guaranteeing free tuition at public colleges or universities for anyone admitted? The $79 billion per year cost would be paid for with higher taxes.
+
+2020 - Do you favor, oppose, or neither favor nor oppose guaranteeing free tuition at public colleges or universities for anyone admitted? The $79 billion per year cost would be paid for with higher taxes. [IN ADDITION TO] Do you favor, oppose, or neither favor nor oppose guaranteeing free tuition at public colleges or universities for anyone admitted? The program would be paid for with higher taxes.
+
+[2019 & 2020] loans: 1 = Oppose a great deal - 7 = Favor a great deal
+2019 - Do you favor, oppose, or neither favor nor oppose cancelling all of the nearly $1.6 trillion of existing student loan debt, and paying for it with higher taxes?
+
+2020 - Do you favor, oppose, or neither favor nor oppose cancelling all of the nearly $1.6 trillion of existing student loan debt, and paying for it with higher taxes? [IN ADDITION TO] Do you favor, oppose, or neither favor nor oppose cancelling all of the existing student loan debt, and paying for it with higher taxes?
+
+[2019 & 2020] white: 1 = White, 0 = Not white
+
+[2019 & 2020] age: 
+2019 - age = 2019 - birthyr
+
+2020 - age = 2020 - birthyr
+
+[2019 & 2020] raceident: 1 = Not at all important - 5 = Extremely important
+2019 - How important is being [RESPONDENT RACE] to your identity?
+
+2020 - How important is being [RACIAL GROUP] to your identity? [IN ADDITION TO] “Generally, being [RACIAL GROUP] is important to my identity.”
+
+[2019 & 2020] raceresent: 1 = Strongly Disagree - 5 = Strongly Agree
+2019 - Average of sum of Racial Resentment battery (Kinder and Sanders 1986)
+
+2020 - verage of sum of Racial Resentment battery (Kinder and Sanders 1986)
+
+[2019 & 2020] pid7: 1 = Strong Republican - 7 = Strong Democrat
+
+[2019 & 2020] ideo: 1 = Strong Conservative - 7 = Strong Liberal
+
+[2019 & 2020] exptravel_ever_r/exptravel_ever: 1 = Yes, 0 = No
+[2019 & 2020] expomesch_r/expomesch: 1 = Yes, 0 = No
+[2019 & 2020] expconvert_r/expconvert: 1 = Yes, 0 = No
+[2019 & 2020] expholiday_r/expholiday: 1 = Yes, 0 = No
+[2019 & 2020] expshark_r/expshark: 1 = Yes, 0 = No
+[2019 & 2020] exparrest_r/exparrest: 1 = Yes, 0 = No
+[2019 & 2020] exppubasst_r/exppubasst: 1 = Yes, 0 = No
+
+
+

@@ -1,0 +1,1957 @@
+================================================================================
+Project Code: BROW0009
+Project Name: Election Study
+Prepared for: Susan Moffitt
+Interviews: 1000
+Field Period:  June 10, 2020 - June 16, 2020
+Project Manager: Ashley Grosse - 650.714.0751
+================================================================================
+
+YouGov interviewed 1100 respondents who were then matched down to a
+sample of 1000 to produce the final dataset. The respondents were 
+matched to a sampling frame on gender, age, race, and education. The 
+frame was constructed by stratified sampling from the full 2018 American 
+Community Survey (ACS) 1-year sample with selection within strata by weighted
+sampling with replacements (using the person weights on the public use
+file). 
+
+The matched cases were weighted to the sampling frame using propensity
+scores. The matched cases and the frame were combined and a logistic
+regression was estimated for inclusion in the frame. The propensity
+score function included age, gender, race/ethnicity, years of education, 
+and region. The propensity scores were grouped into deciles of the 
+estimated propensity score in the frame and post-stratified according to 
+these deciles.
+
+The weights were then post-stratified on 2016 Presidential vote choice, and 
+a four-way stratification of gender, age (4-categories), race (4-
+categories), and education (4-categories), to produce the final weight.
+
+================================================================================
+                                 Variable List                                 
+================================================================================
+caseid                        Case ID
+weight                        Gen Pop Weight
+collins_treat                 jc_treatment
+de_treat                      de_treat
+consent                       Consent
+CoL_FamInc                    I feel good about -- Family's income and budget
+CoL_job                       I feel good about -- Job or job prospects
+CoL_savings                   I feel good about -- Current savings
+CoL_expense                   I feel good about -- Ability to pay for an 
+                              unforeseen expense
+CoL_FamIncDep                 I feel good about -- How dependable my family's 
+                              income is
+CoL_health                    I feel good about -- My family's physical health
+Security_Worries_1            Worry you -- Climate change
+Security_Worries_2            Worry you -- Job loss
+Security_Worries_3            Worry you -- Drug addiction
+Security_Worries_4            Worry you -- Violent crime
+Security_Worries_5            Worry you -- Political polarization
+Security_Worries_6            Worry you -- Economic inequality
+Security_Worries_7            Worry you -- Russian influence in U.S. domestic 
+                              affairs
+Security_Worries_8            Worry you -- Chinese influence in U.S. domestic 
+                              affairs
+Security_Worries_9            Worry you -- The security of our borders
+Security_Worries_10           Worry you -- Public Health
+School_children               Do you have any school-aged children
+School_Trust_1                Trust schools -- Can be trusted to do what's 
+                              right
+School_Trust_2                Trust schools -- Listen to the concerns of local 
+                              citizens
+School_Trust_3                Trust schools -- Employ high quality teachers
+School_Trust_4                Trust schools -- Waste tax payer's dollars
+School_Trust_5                Trust schools -- Make policy based on facts and 
+                              evidence
+School_Trust_6                Trust schools -- Make policy based on politics 
+                              and special interests
+School_Finance_1              Schools, more financial resources -- Services for 
+                              students' mental health
+School_Finance_2              Schools, more financial resources -- Services for 
+                              students' physical health
+School_Finance_3              Schools, more financial resources -- More 
+                              technology to support digital learning
+School_Finance_4              Schools, more financial resources -- Extending 
+                              the school day
+School_Finance_5              Schools, more financial resources -- Extending 
+                              the school year
+School_Finance_6              Schools, more financial resources -- More 
+                              training for teachers
+School_Efficacy_1             School efficacy -- Looked down on
+School_Efficacy_2             School efficacy -- Taken advantage of
+School_Efficacy_3             School efficacy -- Treated worse than other 
+                              groups
+School_Efficacy_4             School efficacy -- Treated like your views don't 
+                              matter
+School_Efficacy_5             School efficacy -- Treated like less than a full 
+                              citizen
+School_Covid_1                School COVID -- Followed the advice of public 
+                              health leaders
+School_Covid_2                School COVID -- Attended to families' needs
+School_Covid_3                School COVID -- Provided all students with 
+                              opportunities to learn
+School_Covid_4                School COVID -- Helped teachers provide 
+                              instruction on-line
+School_Worries_1              Worry you, schools -- Families' lack of time to 
+                              help their children with on-line learning
+School_Worries_2              Worry you, schools -- Confusing and uncoordinated 
+                              on-line learning materials
+School_Worries_3              Worry you, schools -- Students' lack of access to 
+                              school meals
+School_Worries_4              Worry you, schools -- Students' lack of access to 
+                              mental health services
+School_Worries_5              Worry you, schools -- Students' lack of access to 
+                              physical health services
+School_Worries_6              Worry you, schools -- Students' lack of access to 
+                              technology
+School_Worries_7              Worry you, schools -- Students' lack of privacy 
+                              protections
+School_Worries_8              Worry you, schools -- Students' lack of access to 
+                              extracurricular activities
+School_Worries_9              Worry you, schools -- Students' lack of access to 
+                              teachers' help
+School_Worries_10             Worry you, schools -- Students' lack of access to 
+                              quality instruction
+school_worry_no_opninion      No opinion - School Worries grid
+School_Priorities_1           Schools prioritize -- Students' academic learning
+School_Priorities_2           Schools prioritize -- Students' mental health
+School_Priorities_3           Schools prioritize -- Students' physical health
+school_priorities_no_opninion    No opinion - School Priorities grid
+School_Children_Clos          Are your school-aged children currently enrolled 
+                              in a school that has been physically closed due 
+                              to Covid-19
+de_rr_discrim                 Generations of slavery and discrimination, make 
+                              it difficult for Blacks
+de_rr_try                     If Blacks would only try harder, they could be 
+                              just as well off as whites
+de_rr_irish                   Irish, Italian, Jewish, and many other minorities 
+                              overcame prejudice, Blacks should do the same
+de_rr_deserve                 Blacks have gotten less than they deserve
+de_rr_excuse                  Blacks should stop blaming the past for their 
+                              current circumstances
+ms_q11                        Think -- I avoid conflict
+ms_q12                        Think -- Arguments can be fun
+ms_q13                        Think -- I am sometimes reluctant to talk about 
+                              politics
+ms_q14                        Think -- When I talk about politics I do so 
+                              because I learn new things and gain a better 
+                              understanding
+de_id_1                       Racial identity -- Unimportant to my sense of 
+                              what kind of person I am
+de_id_2                       Racial identity -- Central to who I am as an 
+                              individual
+de_id_3                       Racial identity -- Feel good
+ChallDem__equalvote           US standards -- Equal opportunity to vote
+ChallDem__fairelections       US standards -- Fair elections
+ChallDem__agreefacts          US standards -- Political leaders share a common 
+                              understanding of relevant facts
+ChallDem__data                US standards -- Government statistics are not 
+                              influenced by political considerations
+ChallDem_Trust_scotus         Trust/Confidence -- Judicial branch
+ChallDem_Trust_legis          Trust/Confidence -- Legislative branch
+ChallDem_Trust_exec           Trust/Confidence -- Executive branch headed
+ChallDem_Trust_bureauc        Trust/Confidence -- Federal government agencies
+ChallDem_Trust_governor       Trust/Confidence -- Governor of your state
+ChallDem_Trust_localgov       Trust/Confidence -- Local government
+ChallDem_Trust_publichealth   Trust/Confidence -- State's public health agency
+ChallDem_Trust_polic          Trust/Confidence -- Local law enforcement
+ChallDem_vote_matters         Our government -- My vote matters
+ChallDem_vote_listens_me      Our government -- It listens to people like me
+ChallDem_vote_benefit_others     Our government -- It benefits other people 
+                              more than it benefits me
+political_genelect            If the election for president were held today, 
+                              who would you vote for
+jc_q1                         Satisfied with the schools in their district, if 
+                              their school board made decisions this way
+jc_q2                         Willing to attend a school board meeting in the 
+                              future
+jc_q3                         Would feel comfortable bringing an issue faced by 
+                              their child/a child to their school board in the 
+                              future
+jc_q4                         Trust school boards to make decisions that can 
+                              best help students
+ms_q1                         Online Community -- Part of a community of 
+                              like-minded people online
+ms_q2                         Online Community -- Primary purpose of the group 
+                              you spent most time with last year
+ms_q3                         Online Community -- Describe the people in the 
+                              group you spent the most time with last year
+ms_q4                         Online Community -- Read content
+ms_q5                         Online Community -- Share content
+ms_q6                         Media habits since COVID
+ms_q7                         Online community interactions -- Disagreements of 
+                              any kind
+ms_q8                         Online community interactions -- Discussions 
+                              about politics
+ms_q9                         Online community interactions -- Disagreements 
+                              about politics
+ms_q10_race                   Online community share your -- Race
+ms_q10_age                    Online community share your -- Age group
+ms_q10_gender                 Online community share your -- Gender
+ms_q10_sex                    Online community share your -- Sexual orientation
+ms_q10_views                  Online community, share your -- Political views
+de_free_coll                  Policy position -- Free tuition at public 
+                              colleges
+de_loans                      Policy position -- Student loan debt
+de_welfare                    Policy position -- Welfare programs
+de_hc                         Policy position -- Single payer
+de_enviro                     Policy position -- Government regulation on 
+                              businesses greenhouse emissions
+de_exp_check                  Treatment article attention check
+birthyr                       Birth Year
+gender                        Gender
+race                          Race
+educ                          Education
+marstat                       Marital Status
+employ                        Employment Status
+faminc_new                    Family income
+child18                       Children under age 18 in household
+pid3                          3 point party ID
+pid7                          7 point Party ID
+presvote16post                2016 President Vote Post Election
+inputstate                    State of Residence
+votereg                       Voter Registration Status
+ideo5                         Ideology
+newsint                       Political Interest
+religpew                      Religion
+pew_churatd                   Church attendance (Pew version)
+pew_bornagain                 Born Again (Pew version)
+pew_religimp                  Importance of religion (Pew version)
+pew_prayer                    Frequency of Prayer (Pew version)
+starttime                     Questionnaire Start Time
+endtime                       Questionnaire End Time
+     
+                                   Verbatims                                   
+================================================================================
+Col_problem_open              Challenges you are facing in your daily life
+ChallDem_ConstCrisis          What comes to mind when you think of the phrase 
+                              "constitutional crisis"
+ms_q1_open                    Community online -- Primary purpose of the group 
+                              you spent most time with last year - Other open 
+                              text
+ 
+                           Variable map and codebook                           
+================================================================================
+Name:          caseid
+Description:   Case ID
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          weight
+Description:   Gen Pop Weight
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          collins_treat
+Description:   jc_treatment
+         
+          Count   Code   Label
+          -----   ----   -----
+            333      1   Board meetings and public hearings -- Board members 
+                         solicited public input
+            339      2   Board meetings only -- Very little community presence
+            328      3   Board meetings only -- Strong resistance from 
+                         community members
+         
+================================================================================
+Name:          de_treat
+Description:   de_treat
+         
+          Count   Code   Label
+          -----   ----   -----
+            329      1   de control treatment
+            311      2   de white treatment
+            360      3   de black treatment
+         
+================================================================================
+Name:          consent
+Description:   Consent
+         
+          Count   Code   Label
+          -----   ----   -----
+           1000      1   Yes
+              0      2   No
+         
+================================================================================
+Name:          CoL_FamInc
+Description:   I feel good about -- Family's income and budget
+         
+          Count   Code   Label
+          -----   ----   -----
+            114      1   Strongly agree
+            238      2   Agree
+            207      3   Somewhat agree
+            150      4   Neither agree nor disagree
+            114      5   Somewhat disagree
+             88      6   Disagree
+             87      7   Strongly disagree
+              2     98   skipped
+         
+================================================================================
+Name:          CoL_job
+Description:   I feel good about -- Job or job prospects
+         
+          Count   Code   Label
+          -----   ----   -----
+            119      1   Strongly agree
+            171      2   Agree
+            129      3   Somewhat agree
+            292      4   Neither agree nor disagree
+             80      5   Somewhat disagree
+             94      6   Disagree
+            114      7   Strongly disagree
+              1     98   skipped
+         
+================================================================================
+Name:          CoL_savings
+Description:   I feel good about -- Current savings
+         
+          Count   Code   Label
+          -----   ----   -----
+            112      1   Strongly agree
+            177      2   Agree
+            172      3   Somewhat agree
+            151      4   Neither agree nor disagree
+            109      5   Somewhat disagree
+            105      6   Disagree
+            172      7   Strongly disagree
+              2     98   skipped
+         
+================================================================================
+Name:          CoL_expense
+Description:   I feel good about -- Ability to pay for an unforeseen expense
+         
+          Count   Code   Label
+          -----   ----   -----
+            125      1   Strongly agree
+            188      2   Agree
+            171      3   Somewhat agree
+            136      4   Neither agree nor disagree
+            116      5   Somewhat disagree
+            111      6   Disagree
+            152      7   Strongly disagree
+              1     98   skipped
+         
+================================================================================
+Name:          CoL_FamIncDep
+Description:   I feel good about -- How dependable my family's income is
+         
+          Count   Code   Label
+          -----   ----   -----
+            132      1   Strongly agree
+            246      2   Agree
+            212      3   Somewhat agree
+            141      4   Neither agree nor disagree
+            106      5   Somewhat disagree
+             77      6   Disagree
+             85      7   Strongly disagree
+              1     98   skipped
+         
+================================================================================
+Name:          CoL_health
+Description:   I feel good about -- My family's physical health
+         
+          Count   Code   Label
+          -----   ----   -----
+            127      1   Strongly agree
+            298      2   Agree
+            218      3   Somewhat agree
+            149      4   Neither agree nor disagree
+             98      5   Somewhat disagree
+             67      6   Disagree
+             42      7   Strongly disagree
+              1     98   skipped
+         
+================================================================================
+Name:          Security_Worries_1
+Description:   Worry you -- Climate change
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          Security_Worries_2
+Description:   Worry you -- Job loss
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          Security_Worries_3
+Description:   Worry you -- Drug addiction
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          Security_Worries_4
+Description:   Worry you -- Violent crime
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          Security_Worries_5
+Description:   Worry you -- Political polarization
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          Security_Worries_6
+Description:   Worry you -- Economic inequality
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          Security_Worries_7
+Description:   Worry you -- Russian influence in U.S. domestic affairs
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          Security_Worries_8
+Description:   Worry you -- Chinese influence in U.S. domestic affairs
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          Security_Worries_9
+Description:   Worry you -- The security of our borders
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          Security_Worries_10
+Description:   Worry you -- Public Health
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          School_children
+Description:   Do you have any school-aged children
+         
+          Count   Code   Label
+          -----   ----   -----
+            256      1   Yes
+            744      2   No
+         
+================================================================================
+Name:          School_Trust_1
+Description:   Trust schools -- Can be trusted to do what's right
+         
+          Count   Code   Label
+          -----   ----   -----
+             57      1   Strongly agree
+            171      2   Agree
+            227      3   Somewhat agree
+            217      4   Neither agree nor disagree
+            116      5   Somewhat disagree
+             62      6   Disagree
+             59      7   Strongly disagree
+             89      8   No Opinion
+              2     98   skipped
+         
+================================================================================
+Name:          School_Trust_2
+Description:   Trust schools -- Listen to the concerns of local citizens
+         
+          Count   Code   Label
+          -----   ----   -----
+             77      1   Strongly agree
+            156      2   Agree
+            210      3   Somewhat agree
+            209      4   Neither agree nor disagree
+             99      5   Somewhat disagree
+             86      6   Disagree
+             54      7   Strongly disagree
+            107      8   No Opinion
+              2     98   skipped
+         
+================================================================================
+Name:          School_Trust_3
+Description:   Trust schools -- Employ high quality teachers
+         
+          Count   Code   Label
+          -----   ----   -----
+            101      1   Strongly agree
+            202      2   Agree
+            205      3   Somewhat agree
+            220      4   Neither agree nor disagree
+             86      5   Somewhat disagree
+             39      6   Disagree
+             42      7   Strongly disagree
+            103      8   No Opinion
+              2     98   skipped
+         
+================================================================================
+Name:          School_Trust_4
+Description:   Trust schools -- Waste tax payer's dollars
+         
+          Count   Code   Label
+          -----   ----   -----
+            101      1   Strongly agree
+            105      2   Agree
+            178      3   Somewhat agree
+            211      4   Neither agree nor disagree
+             98      5   Somewhat disagree
+            112      6   Disagree
+            106      7   Strongly disagree
+             87      8   No Opinion
+              2     98   skipped
+         
+================================================================================
+Name:          School_Trust_5
+Description:   Trust schools -- Make policy based on facts and evidence
+         
+          Count   Code   Label
+          -----   ----   -----
+             78      1   Strongly agree
+            143      2   Agree
+            178      3   Somewhat agree
+            254      4   Neither agree nor disagree
+            114      5   Somewhat disagree
+             66      6   Disagree
+             51      7   Strongly disagree
+            114      8   No Opinion
+              2     98   skipped
+         
+================================================================================
+Name:          School_Trust_6
+Description:   Trust schools -- Make policy based on politics and special 
+               interests
+         
+          Count   Code   Label
+          -----   ----   -----
+            105      1   Strongly agree
+            142      2   Agree
+            202      3   Somewhat agree
+            257      4   Neither agree nor disagree
+             76      5   Somewhat disagree
+             70      6   Disagree
+             36      7   Strongly disagree
+            110      8   No Opinion
+              2     98   skipped
+         
+================================================================================
+Name:          School_Finance_1
+Description:   Schools, more financial resources -- Services for students' 
+               mental health
+         
+          Count   Code   Label
+          -----   ----   -----
+            172      1   Strongly agree
+            200      2   Agree
+            246      3   Somewhat agree
+            138      4   Neither agree nor disagree
+             59      5   Somewhat disagree
+             72      6   Disagree
+             61      7   Strongly disagree
+             51      8   No Opinion
+              1     98   skipped
+         
+================================================================================
+Name:          School_Finance_2
+Description:   Schools, more financial resources -- Services for students' 
+               physical health
+         
+          Count   Code   Label
+          -----   ----   -----
+            122      1   Strongly agree
+            188      2   Agree
+            226      3   Somewhat agree
+            189      4   Neither agree nor disagree
+             74      5   Somewhat disagree
+             70      6   Disagree
+             71      7   Strongly disagree
+             59      8   No Opinion
+              1     98   skipped
+         
+================================================================================
+Name:          School_Finance_3
+Description:   Schools, more financial resources -- More technology to support 
+               digital learning
+         
+          Count   Code   Label
+          -----   ----   -----
+            111      1   Strongly agree
+            194      2   Agree
+            207      3   Somewhat agree
+            183      4   Neither agree nor disagree
+             81      5   Somewhat disagree
+             84      6   Disagree
+             84      7   Strongly disagree
+             55      8   No Opinion
+              1     98   skipped
+         
+================================================================================
+Name:          School_Finance_4
+Description:   Schools, more financial resources -- Extending the school day
+         
+          Count   Code   Label
+          -----   ----   -----
+             58      1   Strongly agree
+             74      2   Agree
+             94      3   Somewhat agree
+            204      4   Neither agree nor disagree
+            155      5   Somewhat disagree
+            191      6   Disagree
+            157      7   Strongly disagree
+             66      8   No Opinion
+              1     98   skipped
+         
+================================================================================
+Name:          School_Finance_5
+Description:   Schools, more financial resources -- Extending the school year
+         
+          Count   Code   Label
+          -----   ----   -----
+             67      1   Strongly agree
+             87      2   Agree
+            123      3   Somewhat agree
+            194      4   Neither agree nor disagree
+            151      5   Somewhat disagree
+            169      6   Disagree
+            136      7   Strongly disagree
+             72      8   No Opinion
+              1     98   skipped
+         
+================================================================================
+Name:          School_Finance_6
+Description:   Schools, more financial resources -- More training for teachers
+         
+          Count   Code   Label
+          -----   ----   -----
+            127      1   Strongly agree
+            198      2   Agree
+            218      3   Somewhat agree
+            174      4   Neither agree nor disagree
+             71      5   Somewhat disagree
+             76      6   Disagree
+             73      7   Strongly disagree
+             61      8   No Opinion
+              2     98   skipped
+         
+================================================================================
+Name:          School_Efficacy_1
+Description:   School efficacy -- Looked down on
+         
+          Count   Code   Label
+          -----   ----   -----
+            326      1   Never
+            176      2   Sometimes
+             87      3   About half the time
+             63      4   Most of the time
+             55      5   Always
+            291      6   No Opinion
+              2      8   skipped
+         
+================================================================================
+Name:          School_Efficacy_2
+Description:   School efficacy -- Taken advantage of
+         
+          Count   Code   Label
+          -----   ----   -----
+            325      1   Never
+            172      2   Sometimes
+             87      3   About half the time
+             73      4   Most of the time
+             52      5   Always
+            289      6   No Opinion
+              2      8   skipped
+         
+================================================================================
+Name:          School_Efficacy_3
+Description:   School efficacy -- Treated worse than other groups
+         
+          Count   Code   Label
+          -----   ----   -----
+            349      1   Never
+            161      2   Sometimes
+             83      3   About half the time
+             54      4   Most of the time
+             46      5   Always
+            305      6   No Opinion
+              2      8   skipped
+         
+================================================================================
+Name:          School_Efficacy_4
+Description:   School efficacy -- Treated like your views don't matter
+         
+          Count   Code   Label
+          -----   ----   -----
+            239      1   Never
+            206      2   Sometimes
+            106      3   About half the time
+             97      4   Most of the time
+             69      5   Always
+            281      6   No Opinion
+              2      8   skipped
+         
+================================================================================
+Name:          School_Efficacy_5
+Description:   School efficacy -- Treated like less than a full citizen
+         
+          Count   Code   Label
+          -----   ----   -----
+            370      1   Never
+            147      2   Sometimes
+             74      3   About half the time
+             61      4   Most of the time
+             56      5   Always
+            290      6   No Opinion
+              2      8   skipped
+         
+================================================================================
+Name:          School_Covid_1
+Description:   School COVID -- Followed the advice of public health leaders
+         
+          Count   Code   Label
+          -----   ----   -----
+             23      1   Strongly disapprove
+             17      2   Disapprove
+             34      3   Somewhat disapprove
+            134      4   Neither approve nor disapprove
+            149      5   Somewhat approve
+            289      6   Approve
+            202      7   Strongly approve
+            150      8   No Opinion
+              2     98   skipped
+         
+================================================================================
+Name:          School_Covid_2
+Description:   School COVID -- Attended to families' needs
+         
+          Count   Code   Label
+          -----   ----   -----
+             25      1   Strongly disapprove
+             37      2   Disapprove
+             58      3   Somewhat disapprove
+            201      4   Neither approve nor disapprove
+            156      5   Somewhat approve
+            212      6   Approve
+            109      7   Strongly approve
+            200      8   No Opinion
+              2     98   skipped
+         
+================================================================================
+Name:          School_Covid_3
+Description:   School COVID -- Provided all students with opportunities to 
+               learn
+         
+          Count   Code   Label
+          -----   ----   -----
+             29      1   Strongly disapprove
+             39      2   Disapprove
+             74      3   Somewhat disapprove
+            158      4   Neither approve nor disapprove
+            142      5   Somewhat approve
+            226      6   Approve
+            149      7   Strongly approve
+            181      8   No Opinion
+              2     98   skipped
+         
+================================================================================
+Name:          School_Covid_4
+Description:   School COVID -- Helped teachers provide instruction on-line
+         
+          Count   Code   Label
+          -----   ----   -----
+             26      1   Strongly disapprove
+             31      2   Disapprove
+             53      3   Somewhat disapprove
+            177      4   Neither approve nor disapprove
+            144      5   Somewhat approve
+            226      6   Approve
+            130      7   Strongly approve
+            211      8   No Opinion
+              2     98   skipped
+         
+================================================================================
+Name:          School_Worries_1
+Description:   Worry you, schools -- Families' lack of time to help their 
+               children with on-line learning
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          School_Worries_2
+Description:   Worry you, schools -- Confusing and uncoordinated on-line 
+               learning materials
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          School_Worries_3
+Description:   Worry you, schools -- Students' lack of access to school meals
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          School_Worries_4
+Description:   Worry you, schools -- Students' lack of access to mental health 
+               services
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          School_Worries_5
+Description:   Worry you, schools -- Students' lack of access to physical 
+               health services
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          School_Worries_6
+Description:   Worry you, schools -- Students' lack of access to technology
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          School_Worries_7
+Description:   Worry you, schools -- Students' lack of privacy protections
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          School_Worries_8
+Description:   Worry you, schools -- Students' lack of access to 
+               extracurricular activities
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          School_Worries_9
+Description:   Worry you, schools -- Students' lack of access to teachers' help
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          School_Worries_10
+Description:   Worry you, schools -- Students' lack of access to quality 
+               instruction
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          school_worry_no_opninion
+Description:   No opinion - School Worries grid
+         
+          Count   Code   Label
+          -----   ----   -----
+            128      1   No opinion
+            872      8   skipped
+         
+================================================================================
+Name:          School_Priorities_1
+Description:   Schools prioritize -- Students' academic learning
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          School_Priorities_2
+Description:   Schools prioritize -- Students' mental health
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          School_Priorities_3
+Description:   Schools prioritize -- Students' physical health
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          school_priorities_no_opninion
+Description:   No opinion - School Priorities grid
+         
+          Count   Code   Label
+          -----   ----   -----
+            135      1   No opinion
+            865      8   skipped
+         
+================================================================================
+Name:          School_Children_Clos
+Description:   Are your school-aged children currently enrolled in a school 
+               that has been physically closed due to Covid-19
+         
+          Count   Code   Label
+          -----   ----   -----
+            236      1   Yes
+             20      2   No
+            744      9   not asked
+         
+================================================================================
+Name:          de_rr_discrim
+Description:   Generations of slavery and discrimination, make it difficult for 
+               Blacks
+         
+          Count   Code   Label
+          -----   ----   -----
+            199      1   Strongly disagree
+            161      2   Disagree
+            167      3   Neither agree nor disagree
+            229      4   Agree
+            242      5   Strongly agree
+              2      8   skipped
+         
+================================================================================
+Name:          de_rr_try
+Description:   If Blacks would only try harder, they could be just as well off 
+               as whites
+         
+          Count   Code   Label
+          -----   ----   -----
+            305      1   Strongly disagree
+            178      2   Disagree
+            245      3   Neither agree nor disagree
+            165      4   Agree
+            106      5   Strongly agree
+              1      8   skipped
+         
+================================================================================
+Name:          de_rr_irish
+Description:   Irish, Italian, Jewish, and many other minorities overcame 
+               prejudice, Blacks should do the same
+         
+          Count   Code   Label
+          -----   ----   -----
+            201      1   Strongly disagree
+            160      2   Disagree
+            211      3   Neither agree nor disagree
+            232      4   Agree
+            194      5   Strongly agree
+              2      8   skipped
+         
+================================================================================
+Name:          de_rr_deserve
+Description:   Blacks have gotten less than they deserve
+         
+          Count   Code   Label
+          -----   ----   -----
+            169      1   Strongly disagree
+            143      2   Disagree
+            239      3   Neither agree nor disagree
+            245      4   Agree
+            202      5   Strongly agree
+              2      8   skipped
+         
+================================================================================
+Name:          de_rr_excuse
+Description:   Blacks should stop blaming the past for their current 
+               circumstances
+         
+          Count   Code   Label
+          -----   ----   -----
+            243      1   Strongly disagree
+            142      2   Disagree
+            177      3   Neither agree nor disagree
+            196      4   Agree
+            241      5   Strongly agree
+              1      8   skipped
+         
+================================================================================
+Name:          ms_q11
+Description:   Think -- I avoid conflict
+         
+          Count   Code   Label
+          -----   ----   -----
+            184      1   Strongly agree
+            239      2   Agree
+            209      3   Somewhat agree
+            168      4   Neither agree nor disagree
+            103      5   Somewhat disagree
+             65      6   Disagree
+             32      7   Strongly disagree
+         
+================================================================================
+Name:          ms_q12
+Description:   Think -- Arguments can be fun
+         
+          Count   Code   Label
+          -----   ----   -----
+             52      1   Strongly agree
+            123      2   Agree
+            160      3   Somewhat agree
+            241      4   Neither agree nor disagree
+            116      5   Somewhat disagree
+            151      6   Disagree
+            157      7   Strongly disagree
+         
+================================================================================
+Name:          ms_q13
+Description:   Think -- I am sometimes reluctant to talk about politics
+         
+          Count   Code   Label
+          -----   ----   -----
+             69      1   Strongly agree
+            110      2   Agree
+            150      3   Somewhat agree
+            193      4   Neither agree nor disagree
+            115      5   Somewhat disagree
+            184      6   Disagree
+            179      7   Strongly disagree
+         
+================================================================================
+Name:          ms_q14
+Description:   Think -- When I talk about politics I do so because I learn new 
+               things and gain a better understanding
+         
+          Count   Code   Label
+          -----   ----   -----
+            110      1   Strongly agree
+            218      2   Agree
+            252      3   Somewhat agree
+            283      4   Neither agree nor disagree
+             58      5   Somewhat disagree
+             41      6   Disagree
+             38      7   Strongly disagree
+         
+================================================================================
+Name:          de_id_1
+Description:   Racial identity -- Unimportant to my sense of what kind of 
+               person I am
+         
+          Count   Code   Label
+          -----   ----   -----
+            289      1   Strongly agree
+            227      2   Agree
+             85      3   Somewhat agree
+            175      4   Neither agree nor disagree
+             61      5   Somewhat disagree
+             79      6   Disagree
+             84      7   Strongly disagree
+         
+================================================================================
+Name:          de_id_2
+Description:   Racial identity -- Central to who I am as an individual
+         
+          Count   Code   Label
+          -----   ----   -----
+            164      1   Strongly agree
+            137      2   Agree
+             77      3   Somewhat agree
+            256      4   Neither agree nor disagree
+             84      5   Somewhat disagree
+            145      6   Disagree
+            136      7   Strongly disagree
+              1     98   skipped
+         
+================================================================================
+Name:          de_id_3
+Description:   Racial identity -- Feel good
+         
+          Count   Code   Label
+          -----   ----   -----
+            308      1   Strongly agree
+            212      2   Agree
+             88      3   Somewhat agree
+            296      4   Neither agree nor disagree
+             42      5   Somewhat disagree
+             32      6   Disagree
+             22      7   Strongly disagree
+         
+================================================================================
+Name:          ChallDem__equalvote
+Description:   US standards -- Equal opportunity to vote
+         
+          Count   Code   Label
+          -----   ----   -----
+            257      1   The U.S. does not meet this standard.
+            155      2   The U.S. partly meets this standard.
+            175      3   The U.S. mostly meets this standard.
+            316      4   The U.S. fully meets this standard.
+             94      5   Not sure
+              3      8   skipped
+         
+================================================================================
+Name:          ChallDem__fairelections
+Description:   US standards -- Fair elections
+         
+          Count   Code   Label
+          -----   ----   -----
+            292      1   The U.S. does not meet this standard.
+            226      2   The U.S. partly meets this standard.
+            257      3   The U.S. mostly meets this standard.
+             95      4   The U.S. fully meets this standard.
+            127      5   Not sure
+              3      8   skipped
+         
+================================================================================
+Name:          ChallDem__agreefacts
+Description:   US standards -- Political leaders share a common understanding 
+               of relevant facts
+         
+          Count   Code   Label
+          -----   ----   -----
+            503      1   The U.S. does not meet this standard.
+            227      2   The U.S. partly meets this standard.
+             83      3   The U.S. mostly meets this standard.
+             46      4   The U.S. fully meets this standard.
+            138      5   Not sure
+              3      8   skipped
+         
+================================================================================
+Name:          ChallDem__data
+Description:   US standards -- Government statistics are not influenced by 
+               political considerations
+         
+          Count   Code   Label
+          -----   ----   -----
+            327      1   The U.S. does not meet this standard.
+            265      2   The U.S. partly meets this standard.
+            163      3   The U.S. mostly meets this standard.
+             50      4   The U.S. fully meets this standard.
+            192      5   Not sure
+              3      8   skipped
+         
+================================================================================
+Name:          ChallDem_Trust_scotus
+Description:   Trust/Confidence -- Judicial branch
+         
+          Count   Code   Label
+          -----   ----   -----
+            127      1   A great deal
+            408      2   A fair amount
+            331      3   Not very much
+            131      4   None at all
+              3      8   skipped
+         
+================================================================================
+Name:          ChallDem_Trust_legis
+Description:   Trust/Confidence -- Legislative branch
+         
+          Count   Code   Label
+          -----   ----   -----
+             46      1   A great deal
+            284      2   A fair amount
+            481      3   Not very much
+            186      4   None at all
+              3      8   skipped
+         
+================================================================================
+Name:          ChallDem_Trust_exec
+Description:   Trust/Confidence -- Executive branch headed
+         
+          Count   Code   Label
+          -----   ----   -----
+            214      1   A great deal
+            199      2   A fair amount
+            147      3   Not very much
+            438      4   None at all
+              2      8   skipped
+         
+================================================================================
+Name:          ChallDem_Trust_bureauc
+Description:   Trust/Confidence -- Federal government agencies
+         
+          Count   Code   Label
+          -----   ----   -----
+            105      1   A great deal
+            411      2   A fair amount
+            338      3   Not very much
+            145      4   None at all
+              1      8   skipped
+         
+================================================================================
+Name:          ChallDem_Trust_governor
+Description:   Trust/Confidence -- Governor of your state
+         
+          Count   Code   Label
+          -----   ----   -----
+            227      1   A great deal
+            363      2   A fair amount
+            200      3   Not very much
+            208      4   None at all
+              2      8   skipped
+         
+================================================================================
+Name:          ChallDem_Trust_localgov
+Description:   Trust/Confidence -- Local government
+         
+          Count   Code   Label
+          -----   ----   -----
+            170      1   A great deal
+            486      2   A fair amount
+            242      3   Not very much
+             99      4   None at all
+              3      8   skipped
+         
+================================================================================
+Name:          ChallDem_Trust_publichealth
+Description:   Trust/Confidence -- State's public health agency
+         
+          Count   Code   Label
+          -----   ----   -----
+            171      1   A great deal
+            509      2   A fair amount
+            216      3   Not very much
+            102      4   None at all
+              2      8   skipped
+         
+================================================================================
+Name:          ChallDem_Trust_polic
+Description:   Trust/Confidence -- Local law enforcement
+         
+          Count   Code   Label
+          -----   ----   -----
+            272      1   A great deal
+            450      2   A fair amount
+            163      3   Not very much
+            113      4   None at all
+              2      8   skipped
+         
+================================================================================
+Name:          ChallDem_vote_matters
+Description:   Our government -- My vote matters
+         
+          Count   Code   Label
+          -----   ----   -----
+            229      1   Strongly agree
+            207      2   Agree
+            210      3   Somewhat agree
+            129      4   Neither agree nor disagree
+             91      5   Somewhat disagree
+             51      6   Disagree
+             82      7   Strongly disagree
+              1     98   skipped
+         
+================================================================================
+Name:          ChallDem_vote_listens_me
+Description:   Our government -- It listens to people like me
+         
+          Count   Code   Label
+          -----   ----   -----
+             44      1   Strongly agree
+             85      2   Agree
+            156      3   Somewhat agree
+            223      4   Neither agree nor disagree
+            169      5   Somewhat disagree
+            149      6   Disagree
+            173      7   Strongly disagree
+              1     98   skipped
+         
+================================================================================
+Name:          ChallDem_vote_benefit_others
+Description:   Our government -- It benefits other people more than it benefits 
+               me
+         
+          Count   Code   Label
+          -----   ----   -----
+            185      1   Strongly agree
+            171      2   Agree
+            163      3   Somewhat agree
+            300      4   Neither agree nor disagree
+             63      5   Somewhat disagree
+             85      6   Disagree
+             32      7   Strongly disagree
+              1     98   skipped
+         
+================================================================================
+Name:          political_genelect
+Description:   If the election for president were held today, who would you 
+               vote for
+         
+          Count   Code   Label
+          -----   ----   -----
+            365      1   Trump
+            497      2   Biden
+             75      3   Some other candidate
+             62      4   I would not vote
+              1      8   skipped
+         
+================================================================================
+Name:          jc_q1
+Description:   Satisfied with the schools in their district, if their school 
+               board made decisions this way
+         
+          Count   Code   Label
+          -----   ----   -----
+             80      1   Strongly agree
+            231      2   Agree
+            313      3   Neither agree nor disagree
+            204      4   Disagree
+            172      5   Strongly disagree
+         
+================================================================================
+Name:          jc_q2
+Description:   Willing to attend a school board meeting in the future
+         
+          Count   Code   Label
+          -----   ----   -----
+            164      1   Strongly agree
+            330      2   Agree
+            322      3   Neither agree nor disagree
+             93      4   Disagree
+             90      5   Strongly disagree
+              1      8   skipped
+         
+================================================================================
+Name:          jc_q3
+Description:   Would feel comfortable bringing an issue faced by their child/a 
+               child to their school board in the future
+         
+          Count   Code   Label
+          -----   ----   -----
+            140      1   Strongly agree
+            325      2   Agree
+            336      3   Neither agree nor disagree
+            131      4   Disagree
+             68      5   Strongly disagree
+         
+================================================================================
+Name:          jc_q4
+Description:   Trust school boards to make decisions that can best help 
+               students
+         
+          Count   Code   Label
+          -----   ----   -----
+             64      1   Strongly agree
+            268      2   Agree
+            321      3   Neither agree nor disagree
+            234      4   Disagree
+            113      5   Strongly disagree
+         
+================================================================================
+Name:          ms_q1
+Description:   Online Community -- Part of a community of like-minded people 
+               online
+         
+          Count   Code   Label
+          -----   ----   -----
+            487      1   Yes
+            513      2   No
+         
+================================================================================
+Name:          ms_q2
+Description:   Online Community -- Primary purpose of the group you spent most 
+               time with last year
+         
+          Count   Code   Label
+          -----   ----   -----
+             52      1   A trade, educational, or professional group
+            147      2   A group for people who share a particular hobby, 
+                         interest, or activity
+             28      3   A support group, such as for a medical condition or 
+                         personal situation
+             58      4   A group that promotes social or political change
+             34      5   A group associated with a political party or cause
+             54      6   A group that discusses political issues and 
+                         controversies
+             25      7   A fan group, such as for a TV show or sports team
+             35      8   A religious group
+              6      9   An ethnic group
+             14     10   A charitable group or civic organization
+             35     11   Other
+            512     99   not asked
+         
+================================================================================
+Name:          ms_q3
+Description:   Online Community -- Describe the people in the group you spent 
+               the most time with last year
+         
+          Count   Code   Label
+          -----   ----   -----
+            115      1   People I know in real life, mostly my close friends 
+                         and family
+            120      2   People I know in real life, mostly acquaintances 
+                         including neighbors and coworkers
+            204      3   People I only know online, by name or username
+             48      4   The group is totally anonymous and I do not recognize 
+                         individual usernames
+              1      8   skipped
+            512      9   not asked
+         
+================================================================================
+Name:          ms_q4
+Description:   Online Community -- Read content
+         
+          Count   Code   Label
+          -----   ----   -----
+            230      1   At least once a day
+            154      2   Several times a week
+             65      3   Several times a month
+             28      4   Less Often
+             10      5   Never
+              1      8   skipped
+            512      9   not asked
+         
+================================================================================
+Name:          ms_q5
+Description:   Online Community -- Share content
+         
+          Count   Code   Label
+          -----   ----   -----
+            101      1   At least once a day
+            102      2   Several times a week
+            107      3   Several times a month
+            137      4   Less Often
+             40      5   Never
+              1      8   skipped
+            512      9   not asked
+         
+================================================================================
+Name:          ms_q6
+Description:   Media habits since COVID
+         
+          Count   Code   Label
+          -----   ----   -----
+             96      1   I spend much more time online with this community
+            107      2   I spend slightly more time online with this community
+            228      3   My time spent with this community has not changed
+             31      4   I spend a little less time with this community
+             24      5   I spend a lot less time with this community
+              1      8   skipped
+            513      9   not asked
+         
+================================================================================
+Name:          ms_q7
+Description:   Online community interactions -- Disagreements of any kind
+         
+          Count   Code   Label
+          -----   ----   -----
+             24      1   Every time I visit the group
+             60      2   Most of the time
+             71      3   About half the time
+            236      4   Sometimes
+             93      5   Never
+              3      8   skipped
+            513      9   not asked
+         
+================================================================================
+Name:          ms_q8
+Description:   Online community interactions -- Discussions about politics
+         
+          Count   Code   Label
+          -----   ----   -----
+             77      1   Every time I visit the group
+             90      2   Most of the time
+             63      3   About half the time
+            160      4   Sometimes
+             95      5   Never
+              2      8   skipped
+            513      9   not asked
+         
+================================================================================
+Name:          ms_q9
+Description:   Online community interactions -- Disagreements about politics
+         
+          Count   Code   Label
+          -----   ----   -----
+             28      1   Every time I visit the group
+             57      2   Most of the time
+             70      3   About half the time
+            199      4   Sometimes
+            130      5   Never
+              3      8   skipped
+            513      9   not asked
+         
+================================================================================
+Name:          ms_q10_race
+Description:   Online community share your -- Race
+         
+          Count   Code   Label
+          -----   ----   -----
+            164      1   Yes
+            198      2   Maybe
+            123      3   No
+              2      8   skipped
+            513      9   not asked
+         
+================================================================================
+Name:          ms_q10_age
+Description:   Online community share your -- Age group
+         
+          Count   Code   Label
+          -----   ----   -----
+            126      1   Yes
+            195      2   Maybe
+            164      3   No
+              2      8   skipped
+            513      9   not asked
+         
+================================================================================
+Name:          ms_q10_gender
+Description:   Online community share your -- Gender
+         
+          Count   Code   Label
+          -----   ----   -----
+            149      1   Yes
+            192      2   Maybe
+            144      3   No
+              2      8   skipped
+            513      9   not asked
+         
+================================================================================
+Name:          ms_q10_sex
+Description:   Online community share your -- Sexual orientation
+         
+          Count   Code   Label
+          -----   ----   -----
+            173      1   Yes
+            217      2   Maybe
+             95      3   No
+              2      8   skipped
+            513      9   not asked
+         
+================================================================================
+Name:          ms_q10_views
+Description:   Online community, share your -- Political views
+         
+          Count   Code   Label
+          -----   ----   -----
+            180      1   Yes
+            231      2   Maybe
+             74      3   No
+              2      8   skipped
+            513      9   not asked
+         
+================================================================================
+Name:          de_free_coll
+Description:   Policy position -- Free tuition at public colleges
+         
+          Count   Code   Label
+          -----   ----   -----
+            189      1   Favor a great deal
+            147      2   Favor a moderate amount
+            136      3   Favor a little
+            135      4   Neither favor nor oppose
+             60      5   Oppose a little
+             69      6   Oppose a moderate amount
+            263      7   Oppose a great deal
+              1     98   skipped
+         
+================================================================================
+Name:          de_loans
+Description:   Policy position -- Student loan debt
+         
+          Count   Code   Label
+          -----   ----   -----
+            171      1   Favor a great deal
+            117      2   Favor a moderate amount
+            131      3   Favor a little
+            160      4   Neither favor nor oppose
+             60      5   Oppose a little
+             69      6   Oppose a moderate amount
+            292      7   Oppose a great deal
+         
+================================================================================
+Name:          de_welfare
+Description:   Policy position -- Welfare programs
+         
+          Count   Code   Label
+          -----   ----   -----
+            159      1   Favor a great deal
+            138      2   Favor a moderate amount
+            140      3   Favor a little
+            174      4   Neither favor nor oppose
+             66      5   Oppose a little
+             77      6   Oppose a moderate amount
+            246      7   Oppose a great deal
+         
+================================================================================
+Name:          de_hc
+Description:   Policy position -- Single payer
+         
+          Count   Code   Label
+          -----   ----   -----
+            308      1   Favor a great deal
+            146      2   Favor a moderate amount
+             93      3   Favor a little
+            137      4   Neither favor nor oppose
+             31      5   Oppose a little
+             52      6   Oppose a moderate amount
+            233      7   Oppose a great deal
+         
+================================================================================
+Name:          de_enviro
+Description:   Policy position -- Government regulation on businesses 
+               greenhouse emissions
+         
+          Count   Code   Label
+          -----   ----   -----
+            323      1   Favor a great deal
+            145      2   Favor a moderate amount
+            125      3   Favor a little
+            160      4   Neither favor nor oppose
+             45      5   Oppose a little
+             42      6   Oppose a moderate amount
+            160      7   Oppose a great deal
+         
+================================================================================
+Name:          de_exp_check
+Description:   Treatment article attention check
+         
+          Count   Code   Label
+          -----   ----   -----
+             36      1   None
+             19      2   $8,000
+             52      3   $15,000
+            766      4   $29,000
+            127      5   $38,000
+         
+================================================================================
+Name:          birthyr
+Description:   Birth Year
+         
+               Numeric Variable - no categories
+         
+               answered       : 1000
+================================================================================
+Name:          gender
+Description:   Gender
+         
+          Count   Code   Label
+          -----   ----   -----
+            462      1   Male
+            538      2   Female
+         
+================================================================================
+Name:          race
+Description:   Race
+         
+          Count   Code   Label
+          -----   ----   -----
+            638      1   White
+            128      2   Black
+            151      3   Hispanic
+             38      4   Asian
+             10      5   Native American
+             14      6   Mixed
+             20      7   Other
+              1      8   Middle Eastern
+         
+================================================================================
+Name:          educ
+Description:   Education
+         
+          Count   Code   Label
+          -----   ----   -----
+             41      1   No HS
+            321      2   High school graduate
+            182      3   Some college
+            111      4   2-year
+            209      5   4-year
+            136      6   Post-grad
+         
+================================================================================
+Name:          marstat
+Description:   Marital Status
+         
+          Count   Code   Label
+          -----   ----   -----
+            500      1   Married
+             30      2   Separated
+            123      3   Divorced
+             48      4   Widowed
+            233      5   Never married
+             66      6   Domestic / civil partnership
+         
+================================================================================
+Name:          employ
+Description:   Employment Status
+         
+          Count   Code   Label
+          -----   ----   -----
+            377      1   Full-time
+             98      2   Part-time
+             44      3   Temporarily laid off
+             82      4   Unemployed
+            221      5   Retired
+             72      6   Permanently disabled
+             58      7   Homemaker
+             29      8   Student
+             19      9   Other
+         
+================================================================================
+Name:          faminc_new
+Description:   Family income
+         
+          Count   Code   Label
+          -----   ----   -----
+             62      1   Less than $10,000
+             80      2   $10,000 - $19,999
+             90      3   $20,000 - $29,999
+            102      4   $30,000 - $39,999
+             85      5   $40,000 - $49,999
+             78      6   $50,000 - $59,999
+             63      7   $60,000 - $69,999
+             64      8   $70,000 - $79,999
+             82      9   $80,000 - $99,999
+             54     10   $100,000 - $119,999
+             51     11   $120,000 - $149,999
+             44     12   $150,000 - $199,999
+             13     13   $200,000 - $249,999
+             11     14   $250,000 - $349,999
+              5     15   $350,000 - $499,999
+              3     16   $500,000 or more
+            113     97   Prefer not to say
+         
+================================================================================
+Name:          child18
+Description:   Children under age 18 in household
+         
+          Count   Code   Label
+          -----   ----   -----
+            235      1   Yes
+            765      2   No
+         
+================================================================================
+Name:          pid3
+Description:   3 point party ID
+         
+          Count   Code   Label
+          -----   ----   -----
+            404      1   Democrat
+            258      2   Republican
+            247      3   Independent
+             47      4   Other
+             44      5   Not sure
+         
+================================================================================
+Name:          pid7
+Description:   7 point Party ID
+         
+          Count   Code   Label
+          -----   ----   -----
+            287      1   Strong Democrat
+            118      2   Not very strong Democrat
+             87      3   Lean Democrat
+            126      4   Independent
+             90      5   Lean Republican
+             82      6   Not very strong Republican
+            176      7   Strong Republican
+             34      8   Not sure
+              0      9   Don't know
+         
+================================================================================
+Name:          presvote16post
+Description:   2016 President Vote Post Election
+         
+          Count   Code   Label
+          -----   ----   -----
+            361      1   Hillary Clinton
+            289      2   Donald Trump
+             20      3   Gary Johnson
+             16      4   Jill Stein
+              6      5   Evan McMullin
+             17      6   Other
+            291      7   Did not vote for President
+         
+================================================================================
+Name:          inputstate
+Description:   State of Residence
+         
+          Count   Code   Label
+          -----   ----   -----
+             11      1   Alabama
+              1      2   Alaska
+             24      4   Arizona
+              5      5   Arkansas
+             81      6   California
+             26      8   Colorado
+              7      9   Connecticut
+              5     10   Delaware
+              7     11   District of Columbia
+             94     12   Florida
+             47     13   Georgia
+              4     15   Hawaii
+              7     16   Idaho
+             35     17   Illinois
+             13     18   Indiana
+             15     19   Iowa
+              9     20   Kansas
+             14     21   Kentucky
+              7     22   Louisiana
+              1     23   Maine
+             13     24   Maryland
+             12     25   Massachusetts
+             32     26   Michigan
+             14     27   Minnesota
+              9     28   Mississippi
+             17     29   Missouri
+              2     30   Montana
+              5     31   Nebraska
+             13     32   Nevada
+              4     33   New Hampshire
+             25     34   New Jersey
+              6     35   New Mexico
+             70     36   New York
+             32     37   North Carolina
+              1     38   North Dakota
+             42     39   Ohio
+              9     40   Oklahoma
+             21     41   Oregon
+             60     42   Pennsylvania
+              2     44   Rhode Island
+             16     45   South Carolina
+              2     46   South Dakota
+             21     47   Tennessee
+             76     48   Texas
+              5     49   Utah
+              4     50   Vermont
+             26     51   Virginia
+             17     53   Washington
+              5     54   West Virginia
+             22     55   Wisconsin
+              4     56   Wyoming
+              0     60   American Samoa
+              0     64   Federated States of Micronesia
+              0     66   Guam
+              0     68   Marshall Islands
+              0     69   Northern Mariana Islands
+              0     70   Palau
+              0     72   Puerto Rico
+              0     74   U.S. Minor Outlying Islands
+              0     78   Virgin Islands
+              0     81   Alberta
+              0     82   British Columbia
+              0     83   Manitoba
+              0     84   New Brunswick
+              0     85   Newfoundland
+              0     86   Northwest Territories
+              0     87   Nova Scotia
+              0     88   Nunavut
+              0     89   Ontario
+              0     90   Prince Edward Island
+              0     91   Quebec
+              0     92   Saskatchewan
+              0     93   Yukon Territory
+              0     99   Not in the U.S. or Canada
+         
+================================================================================
+Name:          votereg
+Description:   Voter Registration Status
+         
+          Count   Code   Label
+          -----   ----   -----
+            899      1   Yes
+             88      2   No
+             13      3   Don't know
+         
+================================================================================
+Name:          ideo5
+Description:   Ideology
+         
+          Count   Code   Label
+          -----   ----   -----
+            139      1   Very liberal
+            175      2   Liberal
+            293      3   Moderate
+            190      4   Conservative
+            131      5   Very conservative
+             72      6   Not sure
+         
+================================================================================
+Name:          newsint
+Description:   Political Interest
+         
+          Count   Code   Label
+          -----   ----   -----
+            517      1   Most of the time
+            268      2   Some of the time
+            104      3   Only now and then
+             59      4   Hardly at all
+             52      7   Don't know
+         
+================================================================================
+Name:          religpew
+Description:   Religion
+         
+          Count   Code   Label
+          -----   ----   -----
+            321      1   Protestant
+            210      2   Roman Catholic
+             11      3   Mormon
+              4      4   Eastern or Greek Orthodox
+             31      5   Jewish
+              9      6   Muslim
+             12      7   Buddhist
+             12      8   Hindu
+             75      9   Atheist
+             56     10   Agnostic
+            182     11   Nothing in particular
+             77     12   Something else
+         
+================================================================================
+Name:          pew_churatd
+Description:   Church attendance (Pew version)
+         
+          Count   Code   Label
+          -----   ----   -----
+             71      1   More than once a week
+            187      2   Once a week
+             72      3   Once or twice a month
+            112      4   A few times a year
+            229      5   Seldom
+            299      6   Never
+             30      7   Don't know
+         
+================================================================================
+Name:          pew_bornagain
+Description:   Born Again (Pew version)
+         
+          Count   Code   Label
+          -----   ----   -----
+            295      1   Yes
+            705      2   No
+         
+================================================================================
+Name:          pew_religimp
+Description:   Importance of religion (Pew version)
+         
+          Count   Code   Label
+          -----   ----   -----
+            421      1   Very important
+            227      2   Somewhat important
+            142      3   Not too important
+            210      4   Not at all important
+         
+================================================================================
+Name:          pew_prayer
+Description:   Frequency of Prayer (Pew version)
+         
+          Count   Code   Label
+          -----   ----   -----
+            294      1   Several times a day
+            156      2   Once a day
+            129      3   A few times a week
+             27      4   Once a week
+             57      5   A few times a month
+            114      6   Seldom
+            187      7   Never
+             36      8   Don't know
+         
+                               Date format variables                               
+================================================================================
+Name:          starttime
+Description:   Questionnaire Start Time
+          DateTime variable - no categories
+         
+================================================================================
+Name:          endtime
+Description:   Questionnaire End Time
+          DateTime variable - no categories
+         

@@ -1,0 +1,17 @@
+# Some ide files
+*.ini
+.vscode/
+# Some old files
+archived/
+data/2019-anes-pilot/*.dta
+data/2020-anes-pilot/*.dta
+# Drafts
+current_draft/
+experiment_brainstorming/
+literature/
+notes/
+old_drafts/
+slides/
+submissions/
+# Private keys
+keys/

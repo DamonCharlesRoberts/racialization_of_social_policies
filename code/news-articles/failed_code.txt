@@ -1,0 +1,115 @@
+#### py #####
+from nytimesarticle import articleAPI
+
+api = articleAPI('omt1AvW3gLz6wwe7ID1OGGImFddGleL6')
+
+articles = api.search(q = "medicaid",
+    fq = {'source':['Reuters', 'AP', 'The New York Times']},
+    begin_date = 20200203)
+
+from bs4 import BeautifulSoup
+import requests
+
+headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9'}
+url ='https://www.nytimes.com/search?dropmab=true&endDate=20200811&query=medicaid%20expansion&sort=best&startDate=20200203&types=article'
+response = requests.get(url,headers=headers)
+soup = BeautifulSoup(response.content,'lxml')
+for item in soup.select('.assetWrapper'):
+    try:
+        print('----------------------------------------')
+        headline = item.find('h4').get_text()
+        link = item.find('a')['href']
+        summary = item.find('p').get_text()
+        print(headline)
+        print(link)
+        print(summary)
+    except Exception as e: 
+        raise e 
+        print('')
+
+class nyTimesHealthCare(scrapy.Spider):
+    name = "nytimeshealthcare"
+    def start_requests( self ):
+        urls = ['https://www.nytimes.com/search?dropmab=true&endDate=20200811&query=medicaid%20expansion&sort=best&startDate=20200203&types=article']
+        for url in urls:
+            yield scrapy.Request(url = url, callback = self.parse)
+    def parse(self, response):
+        links = response.css('html > body > div#app > div:nth-of-type(2) > main#site-content > div.css-1wa7u5r > div > div.css-46b038 > ol li.css-1l4w6pd > div.css-1kl114x > div.css-1i8vfl5 > div.css-e1lvw9 > a::attr(href)::text').extract()
+        filepath = 'nytimes_hc.csv'
+        with open(filepath, 'w') as f:
+            f.writelines([link + '/n' for link in links])
+        sel_as = sel.css(links)
+        ns = len(sel_as)
+
+####
+class nyTimesHealthCare(scrapy.Spider):
+    name = "nytimeshealthcare"
+    def start_requests( self ):
+        urls = ['https://www.nytimes.com/search?dropmab=true&endDate=20200811&query=medicaid%20expansion&sort=best&startDate=20200203&types=article']
+        for url in urls:
+            yield scrapy.Request(url = url, callback = self.parse)
+    def parse(self , response):
+        links = response.css('html.story > div:nth-of-type(2) > div > div.css_1wa7u5r > div > div.css-46b038 > ol#search-results li ::text').extract()
+        for link in links:
+            yield response.follow(url = link, callback = self.parse_pages)
+    def parse_pages(self, response):
+        art_title = response.xpath('/html[@class = "story"]/body/div[@id = "app"]/div/div[@class = ""]/div[2]/main[@id = "site-content"]/div/article/header[@class = "css-z40kjo euiyums1"]/div[@class = "css-1vkm6nb ehdk2mbo"]/h1//text()')
+        art_title_ext = art_title.extract_first().strip()
+        art_body = response.css('html.story > body > div@app > div > div > div:nth-of-type(2) > main#site-content > div > article#story > section > div.css01fanz05 ::text()')
+        art_body_ext = art_body.extract().strip()
+        print(art_title_ext)
+        print(art_body_ext)
+
+nythcDict = dict()
+process = CrawlerProcess()
+process.crawl(nyTimesHealthCare)
+process.start()
+
+#####
+
+import scrapy
+from scrapy.crawler import CrawlerProcess
+
+
+
+class nyTimesHealthCare(scrapy.Spider):
+    name = "nytimeshealthcare"
+    def start_requests( self ):
+        urls = ['https://www.nytimes.com/search?dropmab=true&endDate=20200811&query=medicaid%20expansion&sort=best&startDate=20200203&types=article']
+        for url in urls:
+            yield scrapy.Request(url = url, callback = self.parse)
+    def parse(self , response):
+        links = response.css('html body div#app div main#site-content div.css-1wa7u5r div div.css-46b038 ol li.css-1l4w6pd div.css-1kl114x div.css-1i8vfl5 div.css-e1lvw9 a::attr(href)').extract()
+        for link in links:
+            yield response.follow(url = link, callback = self.parse_pages)
+    def parse_pages(self, response):
+        art_title = response.css('html.story body div#app div div div main#site-content div article#story.css-1vxca1d.e1qksbhf0 header.css-z40kjo.euiyums1 div.css-1vkm6nb.ehdk2mb0 h1#link-40f8e840.css-rsa88z.e1h9rw200::text')
+        art_title_ext = art_title.extract_first().strip()
+        art_body = response.css('html.story body div#app div div div main#site-content div article#story.css-1vxca1d.e1qksbhf0 section.meteredContent.css-1r7ky0e div.css-1fanzo5.StoryBodyCompanionColumn div.css-53u6y8 p.css-axufdj.evys1bk0 ::text')
+        art_body_ext = art_body.extract().strip()
+
+nythcDict = dict()
+process = CrawlerProcess()
+process.crawl(nyTimesHealthCare)
+process.start()
+
+nythcDict
+
+#### Following works but only gives names and descriptions of articles ####
+import requests
+import os
+from pprint import pprint
+
+apikey = 'omt1AvW3gLz6wwe7ID1OGGImFddGleL6'
+
+query = "medicaid"
+begin_date = "20200203"
+sort = "relevance"
+query_url = f"https://api.nytimes.com/svc/search/v2/articlesearch.json?"\
+    f"q={query}"\
+    f"&api-key={apikey}"\
+    f"&begin_date={begin_date}" \
+    f"&sort={sort}"
+
+r = requests.get(query_url)
+pprint(r.json())
