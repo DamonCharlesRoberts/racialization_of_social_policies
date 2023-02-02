@@ -1,2 +1,3 @@
-*.rtf linguist-detectable
-*.docx linguist-detectable
+*.rtf linguist-documentation
+*.docx linguist-documentation
+*.md linguist-documentation
