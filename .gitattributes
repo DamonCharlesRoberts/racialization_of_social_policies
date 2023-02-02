@@ -1,4 +1,5 @@
-*.rtf linguist-detectable=false
+*.rtf linguist-vendored
+*.RTF linguist-detectable=false
 *.docx linguist-detectable=false
 *.md linguist-detectable=false
 *.txt linguist-detectable=false
