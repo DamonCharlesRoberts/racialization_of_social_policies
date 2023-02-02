@@ -1,6 +1,7 @@
-*.rtf linguist-documentation
-*.docx linguist-documentation
-*.md linguist-documentation
-*.txt linguist-documentation
-*.html linguist-documentation
-*.csv linguist-documentation
+*.rtf linguist-detectable=false
+*.docx linguist-detectable=false
+*.md linguist-detectable=false
+*.txt linguist-detectable=false
+*.html linguist-detectable=false
+*.csv linguist-detectable=false
+*.xlsx linguist-detectable=false
