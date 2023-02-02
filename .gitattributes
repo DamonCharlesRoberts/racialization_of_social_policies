@@ -1,3 +1,4 @@
+data/* linguist-vendored
 *.rtf linguist-vendored
 *.RTF linguist-detectable=false
 *.docx linguist-detectable=false
