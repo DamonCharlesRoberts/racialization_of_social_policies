@@ -1,3 +1,6 @@
 *.rtf linguist-documentation
 *.docx linguist-documentation
 *.md linguist-documentation
+*.txt linguist-documentation
+*.html linguist-documentation
+*.csv linguist-documentation
