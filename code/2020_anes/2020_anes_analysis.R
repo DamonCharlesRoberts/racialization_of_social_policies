@@ -377,7 +377,7 @@ models_group_1_clean <- lapply(
     models_group_1,
     custom_tidy,
     include = c("scale(racial_identity)", "scale(racial_resentment)"),
-    confidence_interval = 0.95
+    confidence_interval = 0.84
 )
         #** Create a figure for the healthcare models in the first group
 healthcare <- graphatize(
@@ -420,16 +420,20 @@ tuition <- graphatize(
 )
         #** combine figures
 combined_figure_group_1 <- healthcare / loans / tuition + plot_annotation(
-    caption = "Data source: 2020 American National Election Pilot Study.\nDots represent point estimates from weighted least squares regression.\nBars represent 95% confidence intervals.\na. Universal healthcare, b. Student loan forgiveness, c. Free tuition",#nolint
+    caption = "Data source: 2020 American National Election Pilot Study.\nDots represent point estimates from weighted least squares regression.\nBars represent 84% confidence intervals.\na. Universal healthcare, b. Student loan forgiveness, c. Free tuition",#nolint
     tag_levels = ("a")
 ) &
 ggplot2::theme(
-            text = ggplot2::element_text(size = 20, family = "sans")
+            text = ggplot2::element_text(size = 19, family = "sans")
 )
         #** save the combined plot
 ggplot2::ggsave(
     combined_figure_group_1,
-    filename = "tables_and_figures/racial_resentment_identity_models.pdf")
+    filename = "tables_and_figures/2020_racial_resentment_identity_models.png",
+    height = 10,
+    width = 10,
+    units = "in"
+)
 
     #* Racial identity moderated by pid
 healthcare_pid_figure <- predicted_graph(
