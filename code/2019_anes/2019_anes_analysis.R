@@ -259,7 +259,7 @@ coefficient_labels_one <- c(
 coefficient_labels_two <- c(
     "racial_identity" = "Racial ID",
     "pid_three" = "Party ID (3-item)",
-    "racial_identity * pid_three" = "Racial ID x Party ID (3-item)",
+    "racial_identity:pid_three" = "Racial ID x Party ID (3-item)",
     "age" = "Age",
     "education" = "Education",
     "family_income" = "Income",
@@ -270,7 +270,7 @@ coefficient_labels_two <- c(
     #* Define labels for goodness-of-fit statistics and order
 goodness_of_fit_metrics <- list(
     list("raw" = "nobs", "clean" = "N", "fmt" = 0),
-    list("raw" = "adj.r.squared", "clean" = "Adj. R<sup>2</sup>", "fmt" = 2),
+    list("raw" = "adj.r.squared", "clean" = "Adj. R^2", "fmt" = 2),
     list("raw" = "rmse", "clean" = "RMSE", "fmt" = 2)
 
 )
