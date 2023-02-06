@@ -70,7 +70,14 @@ anes_2020_clean <- anes_2020_original %>%
             freecol1 == 4 ~ 4,
             freecol1 == 5 ~ 3,
             freecol1 == 6 ~ 2,
-            freecol1 == 7 ~ 1
+            freecol1 == 7 ~ 1,
+            freecol2 == 1 ~ 7,
+            freecol2 == 2 ~ 6,
+            freecol2 == 3 ~ 5,
+            freecol2 == 4 ~ 4,
+            freecol2 == 5 ~ 3,
+            freecol2 == 6 ~ 2,
+            freecol2 == 7 ~ 1
         ),
         #** Student loans -- Support for cancelling all existing student loans
             #*** Coded as:
@@ -91,7 +98,7 @@ anes_2020_clean <- anes_2020_original %>%
                 #**** 6 = Favor a moderate amount
                 #**** 7 = Favor a great deal
                 #**** NA = Values above 7
-        loans = case_when(
+        loan_forgiveness = case_when(
             loans2 == 1 ~ 7,
             loans2 == 2 ~ 6,
             loans2 == 3 ~ 5,

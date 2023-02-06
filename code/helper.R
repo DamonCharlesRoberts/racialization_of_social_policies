@@ -184,10 +184,10 @@ predicted_graph <- function( # nolint # nolint
             y = paste(
                 "Predicted probability of support for ", dependent_variable),
             x = "Racial ID",
-            caption = c(
-                paste("Data source: ", dataset_name),
-                "Predicted values of support",
-                paste("Confidence intervals calculated at the ", confidence_interval*100, "% level") # nolint
-            )
+            caption = paste(
+                    "Data source: ", dataset_name,
+                    "\n", "Predicted values of support",
+                    "\n", "Confidence intervals calculated at the ", confidence_interval * 100, "% level." # nolint
+                )
         )
 }

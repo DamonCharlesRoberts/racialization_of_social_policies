@@ -52,13 +52,13 @@ anes_2019 %>%
         #** Select dependent variables
     select(
         free_college,
-        loans,
+        loan_forgiveness,
         universal_healthcare
     ) %>%
         #** Rename variables for nice table output
     rename(
         `Free college` = free_college,
-        `Loan forgiveness` = loans,
+        `Loan forgiveness` = loan_forgiveness,
         `Universal healthcare` = universal_healthcare
     ) %>%
         #** Create a table of descriptive statistics
@@ -129,7 +129,7 @@ anes_2019 %>%
         #** Select variables used in analyses
     select(
         free_college,
-        loans,
+        loan_forgiveness,
         universal_healthcare,
         racial_identity,
         racial_resentment,
@@ -142,7 +142,7 @@ anes_2019 %>%
         #** Rename variables for nice table output
     rename(
         `Free college` = free_college,
-        `Loan forgiveness` = loans,
+        `Loan forgiveness` = loan_forgiveness,
         `Universal healthcare` = universal_healthcare,
         `Racial identity` = racial_identity,
         `Racial resentment` = racial_resentment,
@@ -192,7 +192,7 @@ models[["non_white_healthcare"]] <- lm(
 models[["non_white_loans"]] <- lm(
     data = anes_2019_non_white_dems,
     weights = anes_2019_non_white_dems$weight,
-    formula = scale(loans) ~ scale(racial_identity) + scale(racial_resentment) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(pid_seven) #nolint
+    formula = scale(loan_forgiveness) ~ scale(racial_identity) + scale(racial_resentment) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(pid_seven) #nolint
 )
             #*** free tuition ~ non-white democrats
 models[["non_white_tuition"]] <- lm(
@@ -210,7 +210,7 @@ models[["white_healthcare"]] <- lm(
 models[["white_loans"]] <- lm(
     data = anes_2019_white_dems,
     weights = anes_2019_white_dems$weight,
-    formula = scale(loans) ~ scale(racial_identity) + scale(racial_resentment) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(pid_seven) #nolint
+    formula = scale(loan_forgiveness) ~ scale(racial_identity) + scale(racial_resentment) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(pid_seven) #nolint
 )
             #*** free tuition ~ white democrats
 models[["white_tuition"]] <- lm(
@@ -234,7 +234,7 @@ models[["healthcare_pid"]] <- lm(
 models[["loans_pid"]] <- lm(
     data = anes_2019_white,
     weights = anes_2019_white$weight,
-    formula = loans ~ racial_identity + pid_three + racial_identity * pid_three + age + education + family_income + female + racial_resentment #nolint
+    formula = loan_forgiveness ~ racial_identity + pid_three + racial_identity * pid_three + age + education + family_income + female + racial_resentment #nolint
 )
         #** free tuition ~ pid x racial identity
 models[["tuition_pid"]] <- lm(

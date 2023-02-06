@@ -11,7 +11,7 @@ user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36
 config = Config()
 config.browser_user_agent = user_agent
 start_date = datetime.date(2019, 1, 1)
-end_date = datetime.date(2019, 1, 11)
+end_date = datetime.date(2019, 8, 11)
 delta = datetime.timedelta(days = 1)
 while start_date <= end_date:
     start_date += delta
