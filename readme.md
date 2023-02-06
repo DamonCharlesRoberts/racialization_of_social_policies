@@ -9,8 +9,6 @@
     <a href="https://github.com/DamonCharlesRoberts/racialization_of_social_policies/pulls">
     <img src="https://img.shields.io/github/issues-pr-raw/DamonCharlesRoberts/racialization_of_social_policies.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub pull requests"></a>
-   <a href = "https://github.com/DamonCharlesRoberts/racialization_of_social_policies/actions/workflows/publish.yml">
-   <img src="https://github.com/DamonCharlesRoberts/racialization_of_social_policies/actions/workflows/publish.yml/badge.svg" alt="Quarto Publish"></a>
 </p>
 
 ---
