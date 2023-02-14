@@ -276,51 +276,51 @@ anes_2020_white_dem <- anes_2020 %>%
     #* Racial identity X PID
         #** universal healthcare ~ pid x racial_identity
 models[["healthcare_ind"]] <- lm(
-    data = anes_2020_white,
-    weights = anes_2020_white$estimated_weight,
-    formula = scale(universal_healthcare) ~ scale(racial_identity) + scale(ind) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
+    data = anes_2020_white_ind,
+    weights = anes_2020_white_ind$estimated_weight,
+    formula = scale(universal_healthcare) ~ scale(racial_identity) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
 )
 models[["healthcare_rep"]] <- lm(
-    data = anes_2020_white,
-    weights = anes_2020_white$estimated_weight,
-    formula = scale(universal_healthcare) ~ scale(racial_identity) + scale(republican) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
+    data = anes_2020_white_rep,
+    weights = anes_2020_white_rep$estimated_weight,
+    formula = scale(universal_healthcare) ~ scale(racial_identity) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
 )
 models[["healthcare_dem"]] <- lm(
-    data = anes_2020_white,
-    weights = anes_2020_white$estimated_weight,
-    formula = scale(universal_healthcare) ~ scale(racial_identity) + scale(democrat) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
+    data = anes_2020_white_dem,
+    weights = anes_2020_white_dem$estimated_weight,
+    formula = scale(universal_healthcare) ~ scale(racial_identity) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
 )
         #** loans ~ pid x racial_identity
 models[["loans_ind"]] <- lm(
-    data = anes_2020_white,
-    weights = anes_2020_white$estimated_weight,
-    formula = scale(loan_forgiveness) ~ scale(racial_identity) + scale(ind) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
+    data = anes_2020_white_ind,
+    weights = anes_2020_white_ind$estimated_weight,
+    formula = scale(loan_forgiveness) ~ scale(racial_identity)+ scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
 )
 models[["loans_rep"]] <- lm(
-    data = anes_2020_white,
-    weights = anes_2020_white$estimated_weight,
-    formula = scale(loan_forgiveness) ~ scale(racial_identity) + scale(republican) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
+    data = anes_2020_white_rep,
+    weights = anes_2020_white_rep$estimated_weight,
+    formula = scale(loan_forgiveness) ~ scale(racial_identity) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
 )
 models[["loans_dem"]] <- lm(
-    data = anes_2020_white,
-    weights = anes_2020_white$estimated_weight,
-    formula = scale(loan_forgiveness) ~ scale(racial_identity) + scale(democrat) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
+    data = anes_2020_white_dem,
+    weights = anes_2020_white_dem$estimated_weight,
+    formula = scale(loan_forgiveness) ~ scale(racial_identity) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
 )
         #** free tuition ~ pid x racial identity
 models[["tuition_ind"]] <- lm(
-    data = anes_2020_white,
-    weights = anes_2020_white$estimated_weight,
-    formula = scale(free_college) ~ scale(racial_identity) + scale(ind) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
+    data = anes_2020_white_ind,
+    weights = anes_2020_white_ind$estimated_weight,
+    formula = scale(free_college) ~ scale(racial_identity) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
 )
 models[["tuition_rep"]] <- lm(
-    data = anes_2020_white,
-    weights = anes_2020_white$estimated_weight,
-    formula = scale(free_college) ~ scale(racial_identity) + scale(republican) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
+    data = anes_2020_white_rep,
+    weights = anes_2020_white_rep$estimated_weight,
+    formula = scale(free_college) ~ scale(racial_identity) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
 )
 models[["tuition_dem"]] <- lm(
-    data = anes_2020_white,
-    weights = anes_2020_white$estimated_weight,
-    formula = scale(free_college) ~ scale(racial_identity) + scale(democrat) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
+    data = anes_2020_white_dem,
+    weights = anes_2020_white_dem$estimated_weight,
+    formula = scale(free_college) ~ scale(racial_identity) + scale(age) + scale(education) + scale(family_income) + scale(female) + scale(racial_resentment) #nolint
 )
 # Tables
     #* Define labels for coefficients and order they appear in tables
@@ -337,9 +337,6 @@ coefficient_labels_one <- c(
 
 coefficient_labels_two <- c(
     "scale(racial_identity)" = "Racial ID",
-    "scale(ind)" = "Independents",
-    "scale(republican)" = "Republicans",
-    "scale(Democrats)" = "Democrats",
     "scale(age)" = "Age",
     "scale(education)" = "Education",
     "scale(family_income)" = "Income",
@@ -549,7 +546,7 @@ tuition <- graphatize(
 )
         #** combine figures
 combined_figure_group_1 <- healthcare / loans / tuition + plot_annotation(
-    caption = "Data source: 2020 American National Election Pilot Study.\nDots represent point estimates from weighted least squares regression.\nBars represent 84% and 95% confidence intervals.\na. Universal healthcare, b. Student loan forgiveness, c. Free tuition"
+    caption = "Data source: 2020 American National Election Pilot Study.\nDots represent point estimates from weighted least squares regression.\nBars represent 84% (wider band) and 95% (thinner band) confidence intervals."
 ) &
 ggplot2::theme(
             text = ggplot2::element_text(size = 19, family = "sans")
@@ -564,38 +561,113 @@ ggplot2::ggsave(
 )
 
     #* Racial identity moderated by pid
-healthcare_pid_figure <- predicted_graph(
-    model = models[["healthcare_pid"]],
-    dataset_name = "2020 American National Election Pilot Study",
-    dependent_variable = "universal healthcare",
-    confidence_interval = 0.84
+models_group_2 <- list(
+    "Independents healthcare" = models[["healthcare_ind"]],
+    "Republicans healthcare" = models[["healthcare_rep"]],
+    "Democrats healthcare" = models[["healthcare_dem"]],
+    "Independents loan forgiveness" = models[["loans_ind"]],
+    "Republicans loan forgiveness" = models[["loans_rep"]],
+    "Democrats loan forgiveness" = models[["loans_dem"]],
+    "Independents free tuition" = models[["tuition_ind"]],
+    "Republicans free tuition" = models[["tuition_rep"]],
+    "Democrats free tuition" = models[["tuition_dem"]]
+)
+        #** Clean these models
+models_group_2_clean <- lapply(
+    models_group_2,
+    custom_tidy,
+    include = c(
+        "scale(racial_identity)"
+    ),
+    confidence_interval = c(0.84, 0.95)
 )
 
-ggsave(
-    healthcare_pid_figure,
-    file = "tables_and_figures/2020_healthcare_pid.png"
+        #** Create a figure for the healthcare models in the first group
+healthcare_two <- graphatize_two(
+    ind_model = models_group_2_clean[["Independents healthcare"]],
+    rep_model = models_group_2_clean[["Republicans healthcare"]],
+    dem_model = models_group_2_clean[["Democrats healthcare"]],
+    old_names = c(
+        "scale(racial_identity)"
+    ),
+    new_names = c(
+        "Racial ID"
+    ),
+    dv_name = "Healthcare"
 )
-
-loans_pid_figure <- predicted_graph(
-    model = models[["loans_pid"]],
-    dataset_name = "2020 American National Election Pilot Study",
-    dependent_variable = "student loan forgiveness",
-    confidence_interval = 0.84
+        #** create a figure for the loans models from the first group
+loans_two <- graphatize_two(
+    ind_model = models_group_2_clean[["Independents loan forgiveness"]],
+    rep_model = models_group_2_clean[["Republicans loan forgiveness"]],
+    dem_model = models_group_2_clean[["Democrats loan forgiveness"]],
+    old_names = c(
+        "scale(racial_identity)"
+    ),
+    new_names = c(
+        "Racial ID"
+    ),
+    dv_name = "Loan forgiveness"
 )
-
-ggsave(
-    loans_pid_figure,
-    file = "tables_and_figures/2020_loans_pid_figure.png"
+        #** create a figure for free tuition for first group of models
+tuition_two <- graphatize_two(
+    ind_model = models_group_2_clean[["Independents free tuition"]],
+    rep_model = models_group_2_clean[["Republicans free tuition"]],
+    dem_model = models_group_2_clean[["Democrats free tuition"]],
+    old_names = c(
+        "scale(racial_identity)"
+    ),
+    new_names = c(
+        "Racial ID"
+    ),
+    dv_name = "Free tuition"
 )
-
-tuition_pid_figure <- predicted_graph(
-    model = models[["tuition_pid"]],
-    dataset_name = "2020 American National Election Pilot Study",
-    dependent_variable = "free tuition",
-    confidence_interval = 0.84
+        #** combine figures
+combined_figure_group_1 <- healthcare_two / loans_two / tuition_two + plot_annotation(
+    caption = "Data source: 2020 American National Election Pilot Study.\nDots represent point estimates from weighted least squares regression.\nBars represent 84% (wider band) and 95% (thinner band) confidence intervals."
+) &
+ggplot2::theme(
+            text = ggplot2::element_text(size = 19, family = "sans")
 )
-
-ggsave(
-    tuition_pid_figure,
-    file = "tables_and_figures/2020_tuition_pid_figure.png"
+        #** save the combined plot
+ggplot2::ggsave(
+    combined_figure_group_1,
+    filename = "tables_and_figures/2020_pid_models.png",
+    height = 10,
+    width = 10,
+    units = "in"
 )
+#healthcare_pid_figure <- predicted_graph(
+#    model = models[["healthcare_pid"]],
+#    dataset_name = "2020 American National Election Pilot Study",
+#    dependent_variable = "universal healthcare",
+#    confidence_interval = 0.84
+#)
+#
+#ggsave(
+#    healthcare_pid_figure,
+#    file = "tables_and_figures/2020_healthcare_pid.png"
+#)
+#
+#loans_pid_figure <- predicted_graph(
+#    model = models[["loans_pid"]],
+#    dataset_name = "2020 American National Election Pilot Study",
+#    dependent_variable = "student loan forgiveness",
+#    confidence_interval = 0.84
+#)
+#
+#ggsave(
+#    loans_pid_figure,
+#    file = "tables_and_figures/2020_loans_pid_figure.png"
+#)
+#
+#tuition_pid_figure <- predicted_graph(
+#    model = models[["tuition_pid"]],
+#    dataset_name = "2020 American National Election Pilot Study",
+#    dependent_variable = "free tuition",
+#    confidence_interval = 0.84
+#)
+#
+#ggsave(
+#    tuition_pid_figure,
+#    file = "tables_and_figures/2020_tuition_pid_figure.png"
+#)

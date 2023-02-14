@@ -71,7 +71,8 @@ graphatize <- function( # nolint
     #' models(list of data.frames): list of tidied model data.frames
     #' old_names(list): list of variable names
     #' new_names(list): list of new variable names
-    #'
+    #' color(str): a string of what color to make the error bars and point estimates
+    #' 
     #' Returns:
     #' ----
     #' ggplot obj
@@ -123,7 +124,7 @@ graphatize <- function( # nolint
                 y = term
             ),
             position = ggplot2::position_dodge(width = 0.4),
-            linewidth = 3/4,
+            linewidth = 1,
             color = color
         ) +
         ggplot2::geom_linerange(
@@ -133,7 +134,7 @@ graphatize <- function( # nolint
                 y = term
             ),
             position = ggplot2::position_dodge(width = 0.4),
-            linewidth = 1,
+            linewidth = 1.5,
             color = color
         ) +
         ggplot2::geom_vline(
@@ -151,7 +152,6 @@ graphatize <- function( # nolint
             x = "Estimate",
             y = "",
             shape = "Models",
-            linetype = "Models",
             title = dv_name
         )
 }
@@ -173,7 +173,8 @@ graphatize_two <- function( # nolint
     #' models(list of data.frames): list of tidied model data.frames
     #' old_names(list): list of variable names
     #' new_names(list): list of new variable names
-    #'
+    #' color(str): a string of what to make the error bars and point estimates
+    #' 
     #' Returns:
     #' ----
     #' ggplot obj
@@ -227,7 +228,7 @@ graphatize_two <- function( # nolint
                 y = term
             ),
             position = ggplot2::position_dodge(width = 0.4),
-            linewidth = 3/4,
+            linewidth = 1,
             color = color
         ) +
         ggplot2::geom_linerange(
@@ -237,7 +238,7 @@ graphatize_two <- function( # nolint
                 y = term
             ),
             position = ggplot2::position_dodge(width = 0.4),
-            linewidth = 1,
+            linewidth = 1.5,
             color = color
         ) +
         ggplot2::geom_vline(
@@ -255,7 +256,6 @@ graphatize_two <- function( # nolint
             x = "Estimate",
             y = "",
             shape = "Models",
-            linetype = "Models",
             title = dv_name
         )
 }
