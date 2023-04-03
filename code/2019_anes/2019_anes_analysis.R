@@ -554,6 +554,9 @@ tuition <- graphatize(
         #** combine figures
 combined_figure_group_1 <- healthcare / loans / tuition + plot_annotation(
     caption = "Data source: 2019 American National Election Pilot Study.\nDots represent point standardized estimates from weighted least squares regression.\nBars represent 84% (wider band) and 95% (thinner band) confidence intervals."#nolint
+) +
+plot_layout(
+    guides = "collect"
 ) &
 ggplot2::theme(
             text = ggplot2::element_text(size = 20, family = "sans")
@@ -634,6 +637,9 @@ tuition_two <- graphatize_two(
         #** combine figures
 combined_figure_group_1 <- healthcare_two / loans_two / tuition_two + plot_annotation(
     caption = "Data source: 2019 American National Election Pilot Study.\nDots represent point estimates from weighted least squares regression.\nBars represent 84% (wider band) and 95% (thinner band) confidence intervals."
+) +
+plot_layout(
+    guides = "collect"
 ) &
 ggplot2::theme(
             text = ggplot2::element_text(size = 19, family = "sans")
